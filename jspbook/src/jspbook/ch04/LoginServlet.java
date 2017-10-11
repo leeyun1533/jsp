@@ -64,6 +64,10 @@ public class LoginServlet extends HttpServlet {
 		if(id.equals(idCheck)){
 			out.println("<h1>이정윤님환영합니다 success</h1>");
 		}
+		else {
+			out.println("<a href=/jspbook/ch04/Login.html>다시로그인</a>");
+		}
+		
 	}
 
 }
