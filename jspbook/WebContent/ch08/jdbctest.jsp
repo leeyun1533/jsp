@@ -54,5 +54,23 @@ String jdbc_url="jdbc:mysql://localhost/FireMon";
 <hr>
 </center>
 #등록 목록<p>
+
+<%
+	sql= "select username,email from jdbc_test";
+	pstmt = conn.prepareStatement(sql);
+	
+	ResultSet rs= pstmt.executeQuery();
+	int i=1;
+	
+	while(rs.next()){
+		out.println(i+" : "+rs.getString(1)+" , "+rs.getString("email")+"<br>");
+		i++;
+	}
+	
+	rs.close();
+	pstmt.close();
+	conn.close();
+	
+%>
 </body>
 </html>
